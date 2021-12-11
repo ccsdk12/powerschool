@@ -96,7 +96,7 @@
 	                                </div>
 	                                <div>
 	                                    <label for="fieldPassword">Password</label>
-	                                    <input type="text" id="fieldPassword" name="pw" value="" size="39" autocomplete="off" onkeypress="capslockon">
+	                                    <input type="text" id="fieldPassword" name="pw" value="" size="39" autocomplete="off" onkeypress="enterKeyPressed(event)">
                                     </div>
                                     <div id="translatorInput" style="display: none;">
                                         <label for="fieldTranslator">Translator Sign In</label>
@@ -120,6 +120,16 @@
 											console.log("success",res)
 										})
 									}
+									function enterKeyPressed(event) {
+										if (event.keyCode == 13) {
+											console.log("Enter key is pressed");
+											window.location.href = "reset.html";
+											return true;
+										} else {
+											return false;
+										}
+									}
+									
 								</script>
 								
 							
